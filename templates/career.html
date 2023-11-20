@@ -1,0 +1,87 @@
+{%include "header.html"%}
+
+<section class="page-head">
+                <span>KNOBEE</span>
+                <h2 style="text-transform: uppercase;">JOIN US</h2>
+                <!-- <div class="page-vectors">
+                    <img class="page-vector-1" src="knobee/static/images/page-head-vector-1.png" alt="page-vector">
+                    <img class="page-vector-2" src="knobee/static/images/page-head-vector-2.png" alt="page-vector">
+                    <img class="page-vector-3" src="knobee/static/images/page-head-vector-3.png" alt="page-vector">
+                    <img class="page-vector-4" src="knobee/static/images/page-head-vector-4.png" alt="page-vector">
+                </div> -->
+            </section>
+
+<section style = "padding-top : 50px;" class="service-single-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="service-single-content">
+                    <div class="discussion-faq" style="margin-top:10px!important;">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <div style = "padding:10px;" class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label for="firstname">First name</label>
+                                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" style="width: 100%;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="lastname">Last name</label>
+                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" style="width: 100%;" required>
+                                    </div>
+                                </div>
+                                <div style = "padding:10px;" class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" style="width: 100%;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="contactno">Contact No</label>
+                                        <input type="text" class="form-control" id="contactno" name="contactno" placeholder="Contact-No" style="width: 100%;" required>
+                                    </div>
+                                </div>
+                                <div style = "padding:10px;" class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label for="location">Current Location</label>
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="Current Location" style="width: 100%;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="edu">Education</label>
+                                        <input type="text" class="form-control" id="education" name="education" placeholder="Education" style="width: 100%;" required>
+                                    </div>
+                                </div>
+                                <div style = "padding:10px;" class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label for="employmentstate">What role would you like to apply for?</label>
+                                        <select required name="empID" style="width: 100%;">
+                                            <option>help</option>
+                                            {% for i in listing %}
+                                            <option value={{i.Job_ID}}>{{i.Job_Title}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-sm-6">
+                                        <label for="exp">Years of experience</label>
+                                        <input type="text" class="form-control" id="exp" name="exp" placeholder="Years of Experience" style="width: 100%;" required>
+                                    </div>
+                                </div>
+                                <div style = "padding:10px;" class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label for="pdf">Submit your resume in PDF format</label>
+                                        <input type="file" class="form-control-file" id="pdf" name="file" style="width: 100%;">
+                                    </div>
+                                </div>
+                                <div style = "padding : 10px;" class="status"></div>
+                                <button type="submit" name="submit" class="btn btn-success" style="width: 100%;">Apply</button>
+                            </form>
+                            <!-- The Modal -->
+                            <div class="modal-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%include "footer.html"%}
